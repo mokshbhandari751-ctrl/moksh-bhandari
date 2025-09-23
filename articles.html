@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles 📰</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .section-heading, .section-subheading {
+      display: inline-block;
+      position: relative;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section-heading::after, .section-subheading::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #ffc107;
+      border-radius: 2px;
+    }
+
+    .section-heading { font-size: 2.5rem; font-weight: bold; }
+    .section-subheading { font-size: 1.2rem; color: #ccc; }
+
+    .article-card {
+      background-color: #1f1f1f;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+    }
+
+    .article-card:hover { transform: translateY(-5px); }
+
+    .article-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; }
+    .article-desc { color: #ccc; margin-bottom: 15px; }
+    .read-more { color: #ffc107; text-decoration: none; font-weight: bold; }
+    .read-more:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Latest Articles Section -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <h1 class="section-heading">📰 Latest Articles</h1>
+      </div>
+      <div class="container">
+      <p class="section-subheading">Stay updated with the newest insights</p>
+
+      <div class="container mt-5">
+
+        <!-- Article Examples -->
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">💻 Learn Python Basics</h4>
+              <p class="article-desc">Start your coding journey with Python. Learn variables, loops, functions, and more.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">🌐 Web Development Tips</h4>
+              <p class="article-desc">Improve your HTML, CSS, and JavaScript skills with real-world examples and projects.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">📊 Data Structures Explained</h4>
+              <p class="article-desc">Understand arrays, linked lists, stacks, queues, and more for efficient programming.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">🔒 Cybersecurity Essentials</h4>
+              <p class="article-desc">Learn how to protect your applications and data with essential cybersecurity practices.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">🚀 Productivity Hacks for Students</h4>
+              <p class="article-desc">Boost your focus and learning efficiency with these practical tips and strategies.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">📱 Mobile App Development</h4>
+              <p class="article-desc">Get started with building Android and iOS apps using modern frameworks.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">🎨 UI/UX Design Basics</h4>
+              <p class="article-desc">Learn the principles of creating user-friendly and visually appealing interfaces.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Articles Section -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <h1 class="section-heading">⭐ Popular Articles</h1>
+      </div>
+      <div class="container">
+      <p class="section-subheading">Articles loved by our readers</p>
+
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">🧠 AI & Machine Learning Basics</h4>
+              <p class="article-desc">Understand how AI works and explore simple machine learning projects.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">💡 Startup Ideas for Students</h4>
+              <p class="article-desc">Learn innovative business ideas and strategies to start small projects.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">📈 Digital Marketing Tips</h4>
+              <p class="article-desc">Grow your online presence with practical marketing strategies for beginners.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Articles Section -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <h1 class="section-heading">🔥 Featured Articles</h1>
+      </div>
+      <div class="container">
+      <p class="section-subheading">Handpicked guides and tutorials just for you</p>
+
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">🖥 Advanced C Programming</h4>
+              <p class="article-desc">Deep dive into pointers, memory management, and complex C projects.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">🔧 Linux Command Line Tips</h4>
+              <p class="article-desc">Master essential Linux commands and boost your productivity as a developer.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="article-card">
+              <h4 class="article-title">🌟 Freelancing & Remote Work</h4>
+              <p class="article-desc">Learn how to find clients, manage projects, and earn remotely as a freelancer.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
