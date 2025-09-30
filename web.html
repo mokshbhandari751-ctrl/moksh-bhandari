@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development Course</title>
+<style>
+body {
+  margin:0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b0b0b;
+  color:#f2f2f2;
+  line-height:1.7;
+}
+header {
+  background: linear-gradient(90deg, #0d0d0d, #1a1a1a);
+  padding:100px 20px;
+  text-align:center;
+  border-bottom:3px solid goldenrod;
+}
+header h1 {
+  font-size:4rem;
+  margin:0;
+  color:goldenrod;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+header p {
+  font-size:1.5rem;
+  color:#bbb;
+  margin-top:25px;
+  max-width:850px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Section styling */
+section {
+  padding:80px 20px;
+  text-align:center;
+  max-width:1200px;
+  margin:auto;
+}
+section h2 {
+  font-size:3rem;
+  color:goldenrod;
+  margin-bottom:30px;
+  text-transform:uppercase;
+  border-bottom:2px solid goldenrod;
+  display:inline-block;
+  padding-bottom:10px;
+}
+section p {
+  font-size:1.3rem;
+  color:#ddd;
+  margin-bottom:40px;
+  max-width:950px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Card styling */
+.card {
+  background:#111;
+  padding:30px;
+  margin:20px auto;
+  border-radius:14px;
+  box-shadow:0 0 20px rgba(218,165,32,0.5);
+  max-width:900px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:0 0 35px rgba(218,165,32,0.8);
+}
+.card h3 {
+  color:goldenrod;
+  margin-bottom:15px;
+  font-size:1.6rem;
+}
+.card p {
+  color:#ccc;
+  font-size:1.2rem;
+}
+.card span {
+  font-size:2rem;
+  font-weight:bold;
+  color:goldenrod;
+  display:block;
+  margin:15px 0;
+}
+
+/* Buttons */
+.btn {
+  background:goldenrod;
+  color:#111;
+  padding:16px 45px;
+  text-decoration:none;
+  font-size:1.2rem;
+  font-weight:bold;
+  border-radius:8px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background:#d4af37;
+  color:#000;
+  box-shadow:0 0 15px rgba(218,165,32,0.8);
+}
+
+/* Packages section */
+.packages {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.packages .card {
+  flex:0 0 320px;
+  margin:20px;
+}
+
+/* Features section */
+.features {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.features .card {
+  flex:0 0 300px;
+  margin:15px;
+}
+
+/* Testimonials section */
+.testimonials {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.testimonials .card {
+  max-width:750px;
+  margin:15px auto;
+}
+
+/* FAQ section */
+.faq {
+  max-width:950px;
+  margin:auto;
+  text-align:left;
+}
+.faq h3 {
+  color:goldenrod;
+  margin-top:20px;
+}
+.faq p {
+  color:#ccc;
+  margin-left:10px;
+  margin-bottom:15px;
+}
+
+/* Footer */
+footer {
+  margin-top:60px;
+  padding:25px;
+  text-align:center;
+  border-top:2px solid goldenrod;
+  color:#aaa;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Web Development Course</h1>
+<p>Master full-stack web development. Learn HTML, CSS, JavaScript, front-end frameworks, back-end technologies, databases, deployment, and real-world projects with professional guidance.</p>
+</header>
+
+<section>
+<h2>Course Overview</h2>
+<p>This Web Development course is designed to take you from beginner to professional. Learn both front-end and back-end technologies, build real-world projects, and gain hands-on experience for your career or business.</p>
+</section>
+
+<section>
+<h2>Modules</h2>
+<div class="card">
+<h3>Module 1: HTML & CSS</h3>
+<p>Learn to structure web pages and style them with responsive, modern designs.</p>
+</div>
+<div class="card">
+<h3>Module 2: JavaScript Basics</h3>
+<p>Interactive web pages, DOM manipulation, events, and basic client-side scripting.</p>
+</div>
+<div class="card">
+<h3>Module 3: Advanced JavaScript</h3>
+<p>ES6+, asynchronous JS, fetch API, and advanced DOM techniques.</p>
+</div>
+<div class="card">
+<h3>Module 4: Front-end Frameworks</h3>
+<p>Learn React.js, Bootstrap, and Tailwind to create professional front-end apps.</p>
+</div>
+<div class="card">
+<h3>Module 5: Back-end Development</h3>
+<p>Node.js, Express.js, building REST APIs, server-side programming.</p>
+</div>
+<div class="card">
+<h3>Module 6: Databases</h3>
+<p>MySQL, MongoDB, connecting database with backend, CRUD operations.</p>
+</div>
+<div class="card">
+<h3>Module 7: Deployment & Hosting</h3>
+<p>Deploy websites and applications using Netlify, Vercel, or AWS.</p>
+</div>
+<div class="card">
+<h3>Module 8: Real Projects</h3>
+<p>Build 2–3 full-stack projects with live deployment to showcase your skills.</p>
+</div>
+</section>
+
+<section>
+<h2>Packages</h2>
+<div class="packages">
+<div class="card">
+<h3>Basic</h3>
+<p>HTML, CSS, JavaScript basics + 1 project.</p>
+<span>₹2,999</span>
+<a href="#" class="btn">Enroll Basic</a>
+</div>
+<div class="card">
+<h3>Pro</h3>
+<p>Basic + Advanced JS, Front-end frameworks, backend intro + 2 projects.</p>
+<span>₹5,999</span>
+<a href="#" class="btn">Enroll Pro</a>
+</div>
+<div class="card">
+<h3>Enterprise</h3>
+<p>Pro + Full Back-end, Database, Deployment, Mentorship + 3 projects.</p>
+<span>₹9,999</span>
+<a href="#" class="btn">Enroll Enterprise</a>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Features & Benefits</h2>
+<div class="features">
+<div class="card">
+<h3>Hands-on Projects</h3>
+<p>Multiple real-world projects to practice your skills.</p>
+</div>
+<div class="card">
+<h3>Certification</h3>
+<p>Professional certificate on course completion.</p>
+</div>
+<div class="card">
+<h3>Lifetime Access</h3>
+<p>Revisit lessons anytime and learn at your pace.</p>
+</div>
+<div class="card">
+<h3>Mentorship</h3>
+<p>Expert guidance throughout the learning journey.</p>
+</div>
+<div class="card">
+<h3>Community Support</h3>
+<p>Join a community of learners to collaborate and share knowledge.</p>
+</div>
+<div class="card">
+<h3>Job Assistance</h3>
+<p>Resume building tips, interview prep, and placement guidance.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Testimonials</h2>
+<div class="testimonials">
+<div class="card">
+<h3>Ravi Sharma</h3>
+<p>“This course helped me land my first full-stack job.”</p>
+</div>
+<div class="card">
+<h3>Anita Verma</h3>
+<p>“Detailed modules and real projects made learning easy and effective.”</p>
+</div>
+<div class="card">
+<h3>Akash Singh</h3>
+<p>“The mentorship and guidance was the best part of this course.”</p>
+</div>
+<div class="card">
+<h3>Priya Kapoor</h3>
+<p>“I learned full-stack development and built a portfolio of live projects.”</p>
+</div>
+<div class="card">
+<h3>Sameer Khan</h3>
+<p>“Professional and comprehensive course for anyone wanting to become a web developer.”</p>
+</div>
+<div class="card">
+<h3>Neha Rani</h3>
+<p>“Highly recommend for students and working professionals alike.”</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>FAQs</h2>
+<div class="faq">
+<h3>Q1: Is prior coding experience required?</h3>
+<p>No, this course starts from basics.</p>
+<h3>Q2: How long is the course?</h3>
+<p>Self-paced; typically 4–6 months to complete all modules and projects.</p>
+<h3>Q3: Will I get a certificate?</h3>
+<p>Yes, upon completing all modules and projects.</p>
+<h3>Q4: What packages are available?</h3>
+<p>Basic, Pro, Enterprise, with increasing levels of content and mentorship.</p>
+<h3>Q5: Are projects included?</h3>
+<p>Yes, all packages include practical projects for real-world experience.</p>
+<h3>Q6: Do you provide mentorship?</h3>
+<p>Enterprise package includes one-on-one mentorship and project review.</p>
+<h3>Q7: Can I access the course after completion?</h3>
+<p>Yes, you have lifetime access.</p>
+<h3>Q8: Is job assistance provided?</h3>
+<p>Yes, resume tips and guidance for interviews are included.</p>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2025 Your Coding Website. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
