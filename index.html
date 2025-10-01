@@ -15,7 +15,19 @@
     <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Mr.Coddy</a>
-        <!-- Buttons -->
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex justify-content-end gap-2 p-3">
+          <!-- Buttons -->
 <div class="d-flex justify-content-end gap-2 p-3">
   <button class="btn btn-gradient-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
   <button class="btn btn-gradient-signup" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
@@ -161,6 +173,10 @@ signupForm?.addEventListener('submit', function(e){
 function closePopup(){ successPopup.style.display = 'none'; }
 </script>
 
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="navbar-collapse collapse" id="navbarsExample01">
           <ul class="navbar-nav me-auto mb-2">
             <li class="nav-item">

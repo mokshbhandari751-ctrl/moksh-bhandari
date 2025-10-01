@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Signup</title>
+<title>Sign Up Today</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
 body {
   margin:0;
@@ -12,193 +13,188 @@ body {
   color:#f2f2f2;
 }
 header {
-  background:#111;
-  padding:40px 20px;
   text-align:center;
+  padding:60px 20px;
   border-bottom:2px solid goldenrod;
 }
 header h1 {
+  font-size:3rem;
   color:goldenrod;
-  font-size:2.8rem;
-  margin:0;
+  margin-bottom:10px;
+}
+header p {
+  color:#ccc;
+  font-size:1.2rem;
 }
 
-/* Signup Form */
-form {
+/* Form Container */
+.signup-container {
   max-width:500px;
-  margin:60px auto;
+  margin:50px auto;
   background:#111;
-  padding:30px;
-  border-radius:14px;
-  box-shadow:0 0 20px rgba(218,165,32,0.5);
+  padding:40px 30px;
+  border-radius:16px;
+  box-shadow:0 0 25px rgba(218,165,32,0.7);
 }
-form h2 {
+.signup-container h2 {
   text-align:center;
   color:goldenrod;
-  margin-bottom:20px;
+  margin-bottom:25px;
   border-bottom:2px solid goldenrod;
   display:inline-block;
   padding-bottom:6px;
 }
-form label {
+.signup-container label {
   display:block;
-  margin:15px 0 5px;
+  margin:12px 0 5px;
   color:#ccc;
 }
-form input {
+.signup-container input {
   width:100%;
   padding:12px;
   border:none;
-  border-radius:6px;
+  border-radius:8px;
   background:#222;
   color:#fff;
   font-size:1rem;
 }
-form input:focus {
-  outline:2px solid goldenrod;
+.signup-container input::placeholder { color:#bbb; }
+.signup-container input:focus {
+  outline:none;
+  box-shadow:0 0 8px goldenrod;
+  border:1px solid goldenrod;
+  background:#222;
+  color:#fff;
 }
-.signup-btn {
-  margin-top:25px;
+.signup-container button {
+  margin-top:20px;
   width:100%;
   padding:14px;
-  background:linear-gradient(135deg,goldenrod,#d4af37);
-  border:none;
-  border-radius:8px;
   font-size:1.1rem;
   font-weight:bold;
-  cursor:pointer;
-  transition:all 0.3s ease;
-  color:#111;
   text-transform:uppercase;
   letter-spacing:1px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#40c0f0,#37a8d4);
+  color:#111;
+  transition:all 0.3s ease;
 }
-.signup-btn:hover {
-  background:linear-gradient(135deg,#d4af37,goldenrod);
-  box-shadow:0 0 20px rgba(218,165,32,0.8);
+.signup-container button:hover {
+  background:linear-gradient(135deg,#37a8d4,#40c0f0);
   transform:scale(1.05);
+  box-shadow:0 0 20px rgba(37,168,212,0.7);
 }
 
-/* Cool Success Interface */
-#signup-success {
+/* Success popup */
+#success-popup {
   position:fixed;
   top:0; left:0;
   width:100%; height:100%;
-  background:linear-gradient(135deg,#0b0b0b,#1a1a1a);
+  background:rgba(0,0,0,0.85);
   display:none;
-  align-items:center;
   justify-content:center;
-  z-index:999;
+  align-items:center;
+  z-index:9999;
   text-align:center;
-  animation:fadeIn 1s ease;
 }
-.success-box {
-  max-width:600px;
-  padding:40px;
-  border-radius:16px;
+.popup-box {
   background:#111;
+  padding:40px 30px;
+  border-radius:16px;
   box-shadow:0 0 40px rgba(218,165,32,0.9);
-  animation:popUp 0.7s ease;
+  animation:popUp 0.6s ease;
 }
-.success-box h2 {
-  font-size:2.5rem;
+.popup-box h2 {
   color:goldenrod;
-  margin-bottom:15px;
+  font-size:2.2rem;
+  margin-bottom:10px;
 }
-.success-box p {
-  font-size:1.2rem;
+.popup-box p {
   color:#ccc;
-  margin-bottom:25px;
+  font-size:1.1rem;
+  margin-bottom:20px;
 }
-
-/* Animated gradient text */
-.welcome {
-  font-size:2rem;
-  font-weight:bold;
-  background:linear-gradient(90deg,goldenrod,#fff,#d4af37);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-size:200%;
-  animation:shine 4s linear infinite;
-}
-
-/* Close button */
-.success-box button {
+.popup-box button {
   padding:12px 30px;
   background:goldenrod;
   border:none;
   border-radius:8px;
-  font-size:1rem;
   font-weight:bold;
   cursor:pointer;
-  transition:all 0.3s ease;
+  transition:0.3s;
 }
-.success-box button:hover {
-  background:#d4af37;
-  box-shadow:0 0 15px rgba(218,165,32,0.8);
+.popup-box button:hover { background:#d4af37; box-shadow:0 0 15px rgba(218,165,32,0.8); }
+
+/* Checkmark */
+.checkmark {
+  width:60px; height:60px;
+  border:4px solid goldenrod;
+  border-radius:50%;
+  margin:0 auto 15px;
+  position:relative;
+}
+.checkmark::after {
+  content:""; position:absolute; left:18px; top:10px;
+  width:15px; height:30px; border-right:4px solid goldenrod; border-bottom:4px solid goldenrod;
+  transform:rotate(45deg); animation:drawCheck 0.5s ease forwards;
 }
 
 /* Animations */
-@keyframes fadeIn {
-  from {opacity:0;} to {opacity:1;}
-}
-@keyframes popUp {
-  from {transform:scale(0.6); opacity:0;}
-  to {transform:scale(1); opacity:1;}
-}
-@keyframes shine {
-  0% {background-position:0%;}
-  100% {background-position:200%;}
-}
+@keyframes drawCheck { from{opacity:0; transform:scale(0.5) rotate(45deg);} to{opacity:1; transform:scale(1) rotate(45deg);} }
+@keyframes popUp { from{transform:scale(0.6); opacity:0;} to{transform:scale(1); opacity:1;} }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Create Your Account</h1>
+  <h1>Sign Up Today</h1>
+  <p>Join our coding community and start learning from the best courses available.</p>
 </header>
 
-<form id="signupForm">
-  <h2>Signup</h2>
+<div class="signup-container">
+  <h2>Create Your Account</h2>
+  <form id="signupTodayForm">
+    <label>Full Name</label>
+    <input type="text" placeholder="Enter full name" required>
 
-  <label for="name">Full Name</label>
-  <input type="text" id="name" required>
+    <label>Email</label>
+    <input type="email" placeholder="Enter email" required>
 
-  <label for="email">Email</label>
-  <input type="email" id="email" required>
+    <label>Password</label>
+    <input type="password" placeholder="Enter password" required>
 
-  <label for="password">Password</label>
-  <input type="password" id="password" required>
+    <label>Confirm Password</label>
+    <input type="password" placeholder="Confirm password" required>
 
-  <label for="confirm">Confirm Password</label>
-  <input type="password" id="confirm" required>
+    <button type="submit">Sign Up Now</button>
+  </form>
+</div>
 
-  <button type="submit" class="signup-btn">Sign Up</button>
-</form>
-
-<!-- Success Page -->
-<div id="signup-success">
-  <div class="success-box">
-    <h2>🎉 Signup Successful!</h2>
-    <p class="welcome">Welcome to Code Academy Family 🚀</p>
-    <p>Your account has been created. Start exploring our courses and events today!</p>
-    <button onclick="closeSuccess()">Continue</button>
+<!-- Success Popup -->
+<div id="success-popup">
+  <div class="popup-box">
+    <div class="checkmark"></div>
+    <h2>🎉 Success!</h2>
+    <p>Your account has been successfully created. Welcome to the community!</p>
+    <button onclick="closePopup()">Continue</button>
   </div>
 </div>
 
 <script>
-const form = document.getElementById("signupForm");
-const success = document.getElementById("signup-success");
+const form = document.getElementById('signupTodayForm');
+const popup = document.getElementById('success-popup');
 
-form.addEventListener("submit", function(e){
+form.addEventListener('submit', function(e){
   e.preventDefault();
-  success.style.display = "flex"; // Show success page
+  popup.style.display = 'flex';
   form.reset();
 });
 
-function closeSuccess(){
-  success.style.display = "none";
-}
+function closePopup(){ popup.style.display = 'none'; }
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
