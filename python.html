@@ -1,258 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Python Mastery Course</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<style>
-/* ---------- Body ---------- */
-body { margin:0; font-family:'Arial',sans-serif; background:#0d0d0d; color:#fff; scroll-behavior:smooth; overflow-x:hidden; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Mastery Course</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* ---------- Body ---------- */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
 
-/* ---------- Hero ---------- */
-.hero {
-  position:relative;
-  height:90vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581091215362-0d16e863d04f?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
-  animation:heroBg 20s ease infinite;
-}
-@keyframes heroBg { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581091215362-0d16e863d04f?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      animation: heroBg 20s ease infinite;
+    }
 
-.hero h1 {
-  font-size:3rem;
-  background:linear-gradient(90deg, gold, #fff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:0 0 25px rgba(255,215,0,0.5);
-  margin:0;
-}
-.hero p {
-  font-size:1.3rem;
-  margin:15px 0;
-  color:#fff;
-  text-shadow:0 0 12px rgba(255,215,0,0.3);
-}
-.hero .btn {
-  margin-top:25px;
-  padding:20px 60px;
-  background:linear-gradient(90deg, gold, #fff);
-  color:#111;
-  font-weight:bold;
-  font-size:18px;
-  border-radius:12px;
-  text-decoration:none;
-  box-shadow:0 0 45px rgba(255,215,0,0.7);
-  transition:0.3s;
-  animation:pulse 2s infinite;
-}
-.hero .btn:hover { background:linear-gradient(90deg, #fff, gold); box-shadow:0 0 60px rgba(255,215,0,0.9); }
-@keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.08);} }
+    @keyframes heroBg {
+      0% {
+        background-position: 0% 50%;
+      }
 
-/* ---------- Particles ---------- */
-.particle {
-  position:absolute;
-  border-radius:50%;
-  background:gold;
-  opacity:0.4;
-  animation:floatParticle linear infinite;
-}
-@keyframes floatParticle { 0%{transform:translateY(0) translateX(0);opacity:0.4;}50%{transform:translateY(-50px) translateX(20px);opacity:0.7;}100%{transform:translateY(0) translateX(0);opacity:0.4;} }
+      50% {
+        background-position: 100% 50%;
+      }
 
-/* ---------- Sections ---------- */
-section {
-  padding:70px 20px;
-  max-width:1100px;
-  margin:0 auto;
-  position:relative;
-  background:linear-gradient(120deg, #0f0f0f, #111, #0f0f0f);
-  background-size:300% 300%;
-  animation:gradShift 15s ease infinite;
-}
-@keyframes gradShift { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-section:not(:last-child) { border-bottom:2px solid gold; }
+    .hero h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, gold, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+      margin: 0;
+    }
 
-h2 {
-  text-align:center;
-  font-size:2.3rem;
-  margin-bottom:35px;
-  background:linear-gradient(90deg, gold, #fff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:0 0 15px rgba(255,215,0,0.4);
-  position:relative;
-}
-h2::after {
-  content:'';
-  display:block;
-  width:0;
-  height:3px;
-  background:gold;
-  margin:8px auto 0;
-  border-radius:2px;
-  transition: width 0.6s ease-in-out;
-}
+    .hero p {
+      font-size: 1.3rem;
+      margin: 15px 0;
+      color: #fff;
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+    }
 
-/* ---------- Overview ---------- */
-section.overview p {
-  font-size:1.3rem;
-  line-height:1.9;
-  max-width:900px;
-  margin:0 auto;
-  color:#ddd;
-  text-shadow:0 0 5px rgba(255,215,0,0.2);
-}
+    .hero .btn {
+      margin-top: 25px;
+      padding: 20px 60px;
+      background: linear-gradient(90deg, gold, #fff);
+      color: #111;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 45px rgba(255, 215, 0, 0.7);
+      transition: 0.3s;
+      animation: pulse 2s infinite;
+    }
 
-/* ---------- Cards ---------- */
-.card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:40px; }
-.card {
-  background:#1a1a1a;
-  border:2px solid gold;
-  border-radius:15px;
-  padding:30px 20px;
-  width:280px;
-  text-align:center;
-  box-shadow:0 0 25px rgba(255,215,0,0.2);
-  transition:all 0.4s ease;
-  position:relative;
-  overflow:hidden;
-  transform-style:preserve-3d;
-}
-.card:hover {
-  transform: scale(1.1) rotateY(6deg) rotateX(3deg);
-  box-shadow:0 0 65px rgba(255,215,0,0.8);
-  background: linear-gradient(145deg, #1a1a1a 0%, #222 100%);
-}
-.card i { color:gold; font-size:36px; margin-bottom:15px; animation:float 2s infinite ease-in-out alternate; }
-@keyframes float { 0%{transform:translateY(0);}100%{transform:translateY(-10px);} }
+    .hero .btn:hover {
+      background: linear-gradient(90deg, #fff, gold);
+      box-shadow: 0 0 60px rgba(255, 215, 0, 0.9);
+    }
 
-/* ---------- Pricing ---------- */
-.pricing-table { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:50px; }
-.pricing-card {
-  background:#1a1a1a;
-  border:2px solid gold;
-  border-radius:15px;
-  padding:35px 20px;
-  width:280px;
-  text-align:center;
-  box-shadow:0 0 25px rgba(255,215,0,0.2);
-  transition:all 0.4s ease;
-}
-.pricing-card:hover { transform:scale(1.05); box-shadow:0 0 55px rgba(255,215,0,0.6); }
-.pricing-card.pro {
-  border:3px solid gold;
-  box-shadow:0 0 70px rgba(255,215,0,0.7);
-  transform:scale(1.05);
-  animation:proPulse 2s infinite;
-}
-@keyframes proPulse { 0%,100%{transform:scale(1.05);}50%{transform:scale(1.08);} }
-.pricing-card h3 { color:gold; margin-top:0; font-size:26px; }
-.pricing-card p { margin:15px 0; font-size:16px; }
+    @keyframes pulse {
 
-/* ---------- CTA ---------- */
-.cta { text-align:center; padding:70px 20px; position:relative; }
-.cta h2 { margin-bottom:25px; }
-.cta .btn { padding:20px 60px; font-size:20px; animation:pulse 2s infinite; }
-.cta p { margin-top:15px; color:gold; font-style:italic; }
+      0%,
+      100% {
+        transform: scale(1);
+      }
 
-/* ---------- Fade-in ---------- */
-.fade-in { opacity:0; transform:translateY(25px); transition: all 1s ease-out; }
-.fade-in.visible { opacity:1; transform:translateY(0); h2.visible::after{width:60px;} }
+      50% {
+        transform: scale(1.08);
+      }
+    }
 
-/* ---------- Responsive ---------- */
-@media(max-width:768px){ .card,.pricing-card { width:90%; } }
-</style>
+    /* ---------- Particles ---------- */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: gold;
+      opacity: 0.4;
+      animation: floatParticle linear infinite;
+    }
+
+    @keyframes floatParticle {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: translateY(-50px) translateX(20px);
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.4;
+      }
+    }
+
+    /* ---------- Sections ---------- */
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      background: linear-gradient(120deg, #0f0f0f, #111, #0f0f0f);
+      background-size: 300% 300%;
+      animation: gradShift 15s ease infinite;
+    }
+
+    @keyframes gradShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    section:not(:last-child) {
+      border-bottom: 2px solid gold;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 35px;
+      background: linear-gradient(90deg, gold, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: gold;
+      margin: 8px auto 0;
+      border-radius: 2px;
+      transition: width 0.6s ease-in-out;
+    }
+
+    /* ---------- Overview ---------- */
+    section.overview p {
+      font-size: 1.3rem;
+      line-height: 1.9;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #ddd;
+      text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+    }
+
+    /* ---------- Cards ---------- */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 2px solid gold;
+      border-radius: 15px;
+      padding: 30px 20px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover {
+      transform: scale(1.1) rotateY(6deg) rotateX(3deg);
+      box-shadow: 0 0 65px rgba(255, 215, 0, 0.8);
+      background: linear-gradient(145deg, #1a1a1a 0%, #222 100%);
+    }
+
+    .card i {
+      color: gold;
+      font-size: 36px;
+      margin-bottom: 15px;
+      animation: float 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* ---------- Pricing ---------- */
+    .pricing-table {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .pricing-card {
+      background: #1a1a1a;
+      border: 2px solid gold;
+      border-radius: 15px;
+      padding: 35px 20px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .pricing-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 55px rgba(255, 215, 0, 0.6);
+    }
+
+    .pricing-card.pro {
+      border: 3px solid gold;
+      box-shadow: 0 0 70px rgba(255, 215, 0, 0.7);
+      transform: scale(1.05);
+      animation: proPulse 2s infinite;
+    }
+
+    @keyframes proPulse {
+
+      0%,
+      100% {
+        transform: scale(1.05);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    .pricing-card h3 {
+      color: gold;
+      margin-top: 0;
+      font-size: 26px;
+    }
+
+    .pricing-card p {
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    /* ---------- CTA ---------- */
+    .cta {
+      text-align: center;
+      padding: 70px 20px;
+      position: relative;
+    }
+
+    .cta h2 {
+      margin-bottom: 25px;
+    }
+
+    .cta .btn {
+      padding: 20px 60px;
+      font-size: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    .cta p {
+      margin-top: 15px;
+      color: gold;
+      font-style: italic;
+    }
+
+    /* ---------- Fade-in ---------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+
+      h2.visible::after {
+        width: 60px;
+      }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media(max-width:768px) {
+
+      .card,
+      .pricing-card {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Hero -->
-<div class="hero">
-  <h1>Python Mastery Course</h1>
-  <p>From basics to advanced projects — become a Python pro!</p>
-  <a href="enroll.html" class="btn">Enroll Now</a>
-  <!-- Particles -->
-  <div class="particle" style="width:8px;height:8px;top:20%;left:10%;animation-duration:6s;"></div>
-  <div class="particle" style="width:12px;height:12px;top:50%;left:80%;animation-duration:8s;"></div>
-  <div class="particle" style="width:6px;height:6px;top:70%;left:30%;animation-duration:5s;"></div>
-</div>
-
-<!-- Overview -->
-<section class="fade-in overview">
-  <h2>Overview</h2>
-  <p>
-    This Python course is designed for anyone who wants to learn programming in a practical and engaging way. 
-    You’ll start from the basics, including syntax, variables, and control flow, then move to intermediate topics like functions, modules, and object-oriented programming. 
-    Along the way, you’ll work on real-world projects, handle files, learn data analysis libraries like NumPy and Pandas, and create visualizations with Matplotlib. 
-    By the end of the course, you’ll have a solid foundation in Python and a portfolio of projects to showcase your skills to potential employers or clients.
-  </p>
-</section>
-
-<!-- What You Will Learn -->
-<section class="fade-in">
-  <h2>What You Will Learn</h2>
-  <div class="card-container">
-    <div class="card"><i class="fas fa-code"></i>Python syntax, variables, and data types</div>
-    <div class="card"><i class="fas fa-exchange-alt"></i>Conditional statements and loops</div>
-    <div class="card"><i class="fas fa-cogs"></i>Functions, modules, and OOP</div>
-    <div class="card"><i class="fas fa-file-alt"></i>File handling & exceptions</div>
-    <div class="card"><i class="fas fa-project-diagram"></i>Libraries: NumPy, Pandas, Matplotlib</div>
-    <div class="card"><i class="fas fa-lightbulb"></i>Mini-projects to practice</div>
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Python Mastery Course</h1>
+    <p>From basics to advanced projects — become a Python pro!</p>
+    <a href="enroll.html" class="btn">Enroll Now</a>
+    <!-- Particles -->
+    <div class="particle" style="width:8px;height:8px;top:20%;left:10%;animation-duration:6s;"></div>
+    <div class="particle" style="width:12px;height:12px;top:50%;left:80%;animation-duration:8s;"></div>
+    <div class="particle" style="width:6px;height:6px;top:70%;left:30%;animation-duration:5s;"></div>
   </div>
-</section>
 
-<!-- Course Features -->
-<section class="fade-in">
-  <h2>Course Features</h2>
-  <div class="card-container">
-    <div class="card"><i class="fas fa-chalkboard-teacher"></i><strong>Interactive Lessons</strong> – Step-by-step tutorials</div>
-    <div class="card"><i class="fas fa-pencil-alt"></i><strong>Practice Exercises</strong> – Daily problem solving</div>
-    <div class="card"><i class="fas fa-project-diagram"></i><strong>Projects</strong> – Hands-on learning</div>
-    <div class="card"><i class="fas fa-users"></i><strong>Community Support</strong> – Peer assistance</div>
-    <div class="card"><i class="fas fa-certificate"></i><strong>Certificate</strong> – Validated skill recognition</div>
-  </div>
-</section>
+  <!-- Overview -->
+  <section class="fade-in overview">
+    <h2>Overview</h2>
+    <p>
+      This Python course is designed for anyone who wants to learn programming in a practical and engaging way.
+      You’ll start from the basics, including syntax, variables, and control flow, then move to intermediate topics like
+      functions, modules, and object-oriented programming.
+      Along the way, you’ll work on real-world projects, handle files, learn data analysis libraries like NumPy and
+      Pandas, and create visualizations with Matplotlib.
+      By the end of the course, you’ll have a solid foundation in Python and a portfolio of projects to showcase your
+      skills to potential employers or clients.
+    </p>
+  </section>
 
-<!-- Pricing -->
-<section class="fade-in">
-  <h2>Pricing Plans</h2>
-  <div class="pricing-table">
-    <div class="pricing-card"> <h3>Basic</h3> <p>Core lessons & practice exercises</p> <p>₹2999</p> </div>
-    <div class="pricing-card pro"> <h3>Pro</h3> <p>Full lessons, projects & priority support</p> <p>₹4999</p> </div>
-    <div class="pricing-card"> <h3>Enterprise</h3> <p>Team access, analytics & dedicated support</p> <p>Contact Us</p> </div>
-  </div>
-</section>
+  <!-- What You Will Learn -->
+  <section class="fade-in">
+    <h2>What You Will Learn</h2>
+    <div class="card-container">
+      <div class="card"><i class="fas fa-code"></i>Python syntax, variables, and data types</div>
+      <div class="card"><i class="fas fa-exchange-alt"></i>Conditional statements and loops</div>
+      <div class="card"><i class="fas fa-cogs"></i>Functions, modules, and OOP</div>
+      <div class="card"><i class="fas fa-file-alt"></i>File handling & exceptions</div>
+      <div class="card"><i class="fas fa-project-diagram"></i>Libraries: NumPy, Pandas, Matplotlib</div>
+      <div class="card"><i class="fas fa-lightbulb"></i>Mini-projects to practice</div>
+    </div>
+  </section>
 
-<!-- CTA -->
-<section class="cta fade-in">
-  <h2>Enroll Now</h2>
-  <p>Take the first step toward mastering Python and building real projects that boost your career.</p>
-  <a href="#" class="btn">Enroll Now</a>
-  <p>Don't wait — secure your spot today!</p>
-</section>
+  <!-- Course Features -->
+  <section class="fade-in">
+    <h2>Course Features</h2>
+    <div class="card-container">
+      <div class="card"><i class="fas fa-chalkboard-teacher"></i><strong>Interactive Lessons</strong> – Step-by-step
+        tutorials</div>
+      <div class="card"><i class="fas fa-pencil-alt"></i><strong>Practice Exercises</strong> – Daily problem solving
+      </div>
+      <div class="card"><i class="fas fa-project-diagram"></i><strong>Projects</strong> – Hands-on learning</div>
+      <div class="card"><i class="fas fa-users"></i><strong>Community Support</strong> – Peer assistance</div>
+      <div class="card"><i class="fas fa-certificate"></i><strong>Certificate</strong> – Validated skill recognition
+      </div>
+    </div>
+  </section>
 
-<script>
-// Fade-in on scroll + heading underline
-const faders = document.querySelectorAll('.fade-in');
-const headings = document.querySelectorAll('h2');
-const observerOptions = { threshold:0.2, rootMargin:"0px 0px -50px 0px" };
-const observer = new IntersectionObserver((entries, obs)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      if(entry.target.querySelector('h2')) entry.target.querySelector('h2').classList.add('visible');
-      obs.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-faders.forEach(f=>observer.observe(f));
-headings.forEach(h=>observer.observe(h));
-</script>
+  <!-- Pricing -->
+  <section class="fade-in">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-table">
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <p>Core lessons & practice exercises</p>
+        <p>₹2999</p>
+      </div>
+      <div class="pricing-card pro">
+        <h3>Pro</h3>
+        <p>Full lessons, projects & priority support</p>
+        <p>₹4999</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <p>Team access, analytics & dedicated support</p>
+        <p>Contact Us</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta fade-in">
+    <h2>Enroll Now</h2>
+    <p>Take the first step toward mastering Python and building real projects that boost your career.</p>
+    <a href="enroll.html" class="btn">Enroll Now</a>
+    <p>Don't wait — secure your spot today!</p>
+  </section>
+
+  <script>
+    // Fade-in on scroll + heading underline
+    const faders = document.querySelectorAll('.fade-in');
+    const headings = document.querySelectorAll('h2');
+    const observerOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.querySelector('h2')) entry.target.querySelector('h2').classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    faders.forEach(f => observer.observe(f));
+    headings.forEach(h => observer.observe(h));
+  </script>
 
 </body>
+
 </html>
